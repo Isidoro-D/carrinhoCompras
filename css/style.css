@@ -1,0 +1,53 @@
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(33, 234, 248);
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+img{
+    margin: 0 auto;
+    width: 100px;
+    height: 56px;
+}
+h1{
+   text-align: justify;
+
+}
+.container {
+    display: block;
+    height: 930px;
+    max-width: 1775px;
+    margin: auto;
+
+
+}
+section{
+    display: flex;
+    margin: 20px auto;
+     
+    
+}
+ul, li{
+   
+    margin: 15px;
+    list-style: none;
+    align-items: center;
+}
+.ul1{
+    
+    text-align: center;
+
+}
+button{
+    margin: 10px;
+    border-radius: 50px;
+    background-color:#ffff;
+}
