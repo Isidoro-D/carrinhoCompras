@@ -36,6 +36,17 @@ div.icon img {
 
 /* ----- MAIN / SECTION / CARD PRODUCT ----- */
 
+body {
+    background: linear-gradient(90deg, rgba(48, 48, 48, 1) 0%, rgba(82, 83, 83, 1) 35%, rgba(89, 89, 89, 1) 56%, rgba(48, 48, 48, 1) 100%);
+    animation: animate-bg 10s linear infinite;
+}
+
+@keyframes animate-bg {
+    to {
+        background-position-x: 1440px;
+    }
+}
+
 main .container {
     max-width: 1440px;
     background-color: linear-gradient();
@@ -45,16 +56,25 @@ main .container {
 }
 
 .cart {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    background-color: #f8f6f6de;
+    background: linear-gradient(100deg, rgba(3, 35, 87, 1) 10%, rgba(0, 95, 166, 1) 34%, rgb(1, 127, 190) 56%, rgba(3, 35, 87, 1) 90%);
     align-items: center;
+    animation: animate-color 10s linear infinite;
+}
+
+@keyframes animate-color {
+    to {
+        background-position-x: 1440px;
+    }
 }
 
 .product {
     display: flex;
     flex-direction: column;
-    line-height: 40px;
+    line-height: 50px;
     width: 35%;
     margin: 30px 0;
     align-items: center;
@@ -62,7 +82,8 @@ main .container {
 
 .subtitle {
     font-size: 2rem;
-    color: var(--megaman);
+    color: var(--adamantine-blue);
+    margin-top: 20px;
 }
 
 select {
@@ -73,16 +94,75 @@ select {
     border: 1px solid var(--robin-blue);
     border-radius: 8px;
     box-shadow: 2px 2px 6px var(--robin-blue);
+    color: #ffff;
 }
 
 input {
     outline: none;
+    color: #ffff;
     text-align: center;
     background-color: var(--megaman);
     border: 1px solid var(--robin-blue);
     border-radius: 8px;
     box-shadow: 1px 1px 4px var(--robin-blue);
-    width: 60px;
-    height: 55px;
-    
+    width: 50px;
+    height: 45px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: textfield;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 16px;
+    background-color: var(--megaman);
+    color: #ffff;
+    border-radius: 8px;
+    margin: 0 8px;
+}
+
+.btn:hover {
+    background-color: #00a9ec;
+    transition: .3s;
+}
+
+/* ----- DESCRIPTION ----- */
+
+table {
+    width: 80vw;
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+tr {
+    background-color: var(--megaman);
+    border-radius: 4px;
+}
+
+th {
+    padding: 10px 40px;
+    margin-left: 8%;
+    font-size: 1.25rem;
+    color: #ffff;
+}
+
+th.start {
+    margin-right: 20%;
 }
