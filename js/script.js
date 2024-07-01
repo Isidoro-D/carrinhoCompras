@@ -57,7 +57,7 @@ function clearCart() {
     // Remove todas as linhas da tabela
     while (cartTable.firstChild) {
         cartTable.removeChild(cartTable.firstChild);
-        totalDisplay.textContent = "";
+        totalDisplay.textContent = "Total: R$ 0,00";
     }
 }
 

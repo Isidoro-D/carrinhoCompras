@@ -149,13 +149,13 @@ input[type=number] {
 /* ----- DESCRIPTION ----- */
 
 table {
-    width: 75vw;
+    max-width: 75%;
 }
 
 tr {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: var(--megaman);
     border-radius: 4px;
 }
@@ -164,7 +164,8 @@ th {
     padding: 10px 0;
     font-size: 1.35rem;
     color: #ffff;
-    margin:0 10%;   
+    max-width: 20vw;
+    min-width: 20vw;
 }
 
 
@@ -175,12 +176,11 @@ tbody {
 }
 
 td {
-    justify-content: center;
-    position: inherit;
+    justify-content: space-evenly;
     font-size: 1.2rem;
     color: #ffff;
-    padding: 10px 80px;
-    max-width: 400px;
+    max-width: 20vw;
+    min-width: 20vw;
     align-items: center;
     text-align: center;
     margin: 4px auto;
