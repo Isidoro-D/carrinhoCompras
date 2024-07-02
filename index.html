@@ -16,52 +16,64 @@
 </head>
 
 <body>
-    <header>
+    <main>
+        <div class="Container"> 
+            <div> <img src="./img/carrinho3.png" alt=" logo"></div>
+            <div class="topo">
+                <h1>Carrinho de Compras</h1> 
+                
+            </div>
+            <section class="produtos">
+                <h2>Produtos</h2>
+                <form action="search">
+                    <select name="produtos" id="produtos" class="produtos">
+                        <option value="Selecionar produtos"> Selecionar produtos</option>
+                        <option value="Mouse Genérico - R$ 9,90"> Mouse Genérico - R$ 9,90 </option>
+                        <option value="Teclado Genérico(preto)  R$ 29,90"> Teclado Genérico[preto] - R$ 29,90
+                        </option>
+                        <option value="Mousepad Genérico(preto) - R$ 29,90"> Mousepad Genérico[preto] - R$ 29,90
+                        </option>
+                        <option value="Teclado Microsoft (Preto) - R$ 129,90"> Teclado Microsoft (Preto) - R$ 129,90
+                        </option>
+                        <option value="Mouse Genérico (Preto) - R$ 19,90"> Mouse Genérico (Preto) - R$ 19,90
+                        </option>
+                        <option value="Mouse Microsoft (Preto) - R$ 69,90"> Mouse Microsoft (Preto) - R$ 69,90
+                        </option>
+                    </select>
+                </form>
 
-        <h1> <img src="./img/carrinho3.png"  alt=" logo">Carrinho de Compras</h1>
-
-    </header>
-
-    <div class="Container">
-        <section class="produtos">
-            <ul>
-                <li > Produtos
-                    <form action="search">
-                        <select name="" id="">
-                            <option value=""> Selecionar produtos</option>
-                            <option value=""> Genérico - R$ 9,90 </option>
-                            <option value=""> Teclado Genérico[preto] - R$ 29,90</option>
-                            <option value=""> Mousepad Genérico[preto] - R$ 29,90</option>
-                            <option value=""> Teclado Microsoft (Preto) - R$ 129,90</option>
-                            <option value=""> Mouse Genérico (Preto) - R$ 19,90</option>
-                            <option value=""> Mouse Microsoft (Preto) - R$ 69,90</option>
-                        </select>
-                    </form>
-                </li>
-                <li> Quantidade
+                <div class="">
+                    <h3> Quantidade de produtos</h3>
                     <form action="search ">
-                        <input class="qtde" type="number" name="" id="">
+                        <input type="number" name=" qtde" id=" qtde" placeholder="Digite a quantidade">
                     </form>
-                        <button>Adicionar</button>
-                        <button>limpar</button>
-                </li>
-            </ul>
-            <ul class="ul1">
-                </li>
-                <li>  <b>Produtos do <br> seu <br> Carrinho</b> <br><img src="./img/carrinho.jpg" alt=" carrinho"> 
-                    
-                    <p> <b>____________________</p>
-                  
+                    <div class="Btn">
+                        <button class="addBtn">Adicionar</button>
+                        <button class="addbtnLimpar">limpar</button>
+                    </div>
+                </div>
 
-                    <br>
-                    <br>
-                    <p> Total R$69.90</p>
-                </li>
+                <div class="produtos">
+                    <div>
+                        <h2> Produtos do <br> seu <br> Carrinho</b> <br></h2>
+                        <img src="./img/carrinho.jpg" alt=" carrinho">
 
-            </ul>
-        </section>
+                    </div>
+                    <div class="lista-produtos">
 
-        <script src="./js/script.js"></script>
+                    </div>
+
+                    <div class="precoTotal">
+                        <p> Total R$</p>
+                    </div>
+
+
+                </div>
+            </section>
+
+
+    </main>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

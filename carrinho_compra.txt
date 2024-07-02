@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho TI</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./_styles/style.css">
+</head>
+
+<body>
+
+    <section class="cartWindow">
+        <div class="flex">
+            <div class="addProduct">
+                <h2 class="title">Produtos</h2>
+                <select name="products" id="products" class="products">
+                    <option value="0">Teclado Genérico (Preto) - R$ <span class="price">29.90</span></option>
+                    <option value="1">Teclado Logitech (Preto) - R$ <span class="price">69.90</span></option>
+                    <option value="2">Teclado Microsoft (Preto) - R$ <span class="price">129.90</span> </option>
+                    <option value="3">Mouse Genérico (Preto) - R$ <span class="price">19.90</span></option>
+                    <option value="4">Mouse Microsoft (Preto) - R$ <span class="price">69.90</span></option>
+                    <option value="5">MousePad Genérico - R$ <span class="price">9.90</span></option>
+                </select>
+                <h2>Quantidade</h2>
+                <input type="text" name="qtd" id="qtd" class="qtd" placeholder="digite a quantidade" />
+                <div class="btn">
+                    <button class="addBtn sub">Adicionar</button>
+                    <button class="clearBtn sub">Limpar</button>
+                </div>
+            </div>
+            <div class="showProduct">
+                <h2 class="title">Produtos no carrinho:</h2>
+                <ul>
+
+                </ul>
+                <h3>Total: </h3>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- JavaScript -->
+    <script src="./_scripts/handle.js"></script>
+</body>
+
+</html>
+
+========================================================================================================================
+
+
+const addBtn = document.querySelector(".addBtn");//botão adicionar
+const clear = document.querySelector(".clearBtn");//botão limpar
+
+// armazenar as opções do select em um array 
+let options = Array.from(document.querySelectorAll("option"));
+// usar para indexar o array
+let products = document.querySelector(".products");
+//produtos adicionados let
+let addedProducts = Array.from(document.querySelectorAll(".showProduct"));
+let itens = document.querySelector('ul');
+// preços num array:
+let itensPrice = [29.90, 69.90, 129.90, 19.90, 69.90, 9.90];
+// contagem geral de produtos adicionados no carrinho
+let productCount = 0;
+// preço total
+let total = 0;
+
+
+
+/* Checando se armazenou os itens no array */
+console.log(products);
+console.log(itens);
+console.log(itensPrice);
+
+addProduct();
+clearBtn();
+
+function addProduct() {
+    addBtn.addEventListener("click", (e) => {
+        let qtd = Number(document.querySelector(".qtd").value);
+
+        let item = document.createElement('li');
+
+
+        if (qtd != '' || qtd != 0) {
+            productCount++;
+            itens.append(item);
+            item.textContent = `${qtd}x ${options[products.value].textContent}`;
+            console.log(itensPrice[productCount - 1]);
+            let currentPrice = itensPrice[productCount - 1] * qtd;
+            
+            
+            
+            
+        
+            
+            addedProducts.push(item);
+            
+            total += currentPrice;
+        
+            document.querySelector('h3').innerText = `Total - R$ ${total.toFixed(2)} `;
+           
+            
+        }
+        else {
+            alert("erro - insira a quantidade");
+        }
+
+        
+       
+    })
+   
+    
+}
+
+function clearBtn() {
+    clear.addEventListener("click", (e) => {
+   
+        addedProducts.pop();
+        document.querySelector(".qtd").value = '';
+        document.querySelector("ul").innerHTML = '';
+        document.querySelector('h3').innerText = '';
+        total = 0;
+    })
+    
+}
+
+
+=================================================================================================================
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body{
+    background-image: linear-gradient(#0B2740,#164773);
+    background-image: url(../_assets/_pictures/background.jpg) linear-gradient(#0b274075,#16487369);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.addProduct {
+    background-color: white;
+    text-align: center;
+    border:3px solid #0B2740 ;
+    box-shadow: 4px 2px 15px #0B0726;
+    width: 35%;
+    height: 60vh;
+    border-radius: 1rem ;
+    padding: 20px;
+}
+
+
+.product {
+    margin-top: 16%;
+}
+
+select{
+    transition: all 0.5s ease;
+    border-radius: 5px;
+    border: 2px solid #5d8daa;
+}
+
+select:hover{
+    color: white;
+    background-color: #7094aa;
+}
+
+.quant {
+    margin-top: 8%;
+
+}
+
+.showProduct {
+    background-color: white;
+    width: 35%;
+    height: 60vh;
+    padding: 20px;
+    border-radius: 1rem;
+    border:3px solid #0B2740 ;
+    box-shadow: 4px 2px 15px #0B0726;
+}
+
+.title {
+    padding: 20px;
+    font-size: 2rem;
+}
+
+.cartWindow {
+    margin-top: 10%;
+    text-align: center;
+    margin-bottom: 6%;
+    background-color: #66B8D9;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    height: 80vh;
+    align-items: center;
+    border-radius: 1.5rem;
+    padding-bottom: 1%;
+    padding-top: 2%;
+    box-shadow: 4px 2px 15px #0B0726;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: transparent;
+    color:#2474A6;
+    border: 2px solid #2474A6;
+}
+
+button{
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.btn {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: space-evenly;
+}
+
+.sub {
+    width: 25%;
+    height: 5vh;
+}
+
+select {
+    width: 57%;
+    height: 6vh;
+}
+
+input {
+    width: 55%;
+    height: 5vh;
+    border-radius: 5px;
+    border: 2px solid #2474A6;
+}
+
+.sub {
+    background-color: #2474A6;
+    border: none;
+    border-radius: 10px;
+}
+
+h2 {
+    font-family: "Nunito Sans", sans-serif;
+    padding: 8px;
+}
+ul {
+    list-style-type: none;
+}
+li{
+    font-style: italic;
+    margin-top: 2%;
+}
+h3{
+    position: absolute;
+    top: 80%;
+    right: 30%;
+}
+
+@media screen and (max-width:800px) {
+    h2{
+        font-size: 2.5vw;
+    }
+    h3{
+        position: absolute;
+        top: 80%;
+        right: 30%;
+    }
+
+    .flex{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cartWindow{
+        height: 100%;
+    }
+
+    .addProduct{
+        width: 60%;
+    }
+
+    button{
+        font-size: 2.5vw;
+    }
+
+    .btn{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input{
+        width: 100%;
+
+    }
+
+    .sub{
+        margin-bottom: 10%;
+        width: 130%;
+        height: 5vh;
+    }
+
+    .products{
+        width: 100%;
+        font-size: 1.8vw;
+    }
+
+    option{
+        font-size: 2vw;
+    }
+
+    .showProduct{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .cartWindow{
+        width: 70%;
+        height: 100%;
+
+    }
+}
