@@ -9,14 +9,59 @@
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap"
+        rel="stylesheet">
     <title>Carrinho de Compras</title>
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="icon"><img src="./assets/shopping-bag_4010612.png" alt="Logo Carrinho de compra"></div>
+        <h1 class="title">Carrinho de TI</h1>
+    </nav>
+    <main class="container">
+        <section class="cart">
+            <div class="card product">
+                <h2 class="subtitle">Produtos</h2>
+                <select id="productSelect">
+                    <option selected disabled value="">Selecionar Produto</option>
+                    <option value="Teclado Genérico (Preto) - R$ 29,90">Teclado Genérico (Preto) - R$ 29,90</option>
+                    <option value="Teclado Logitech (Preto) - R$ 69,90">Teclado Logitech (Preto) - R$ 69,90</option>
+                    <option value="Teclado Microsoft (Preto) - R$ 129,90">Teclado Microsoft (Preto) - R$ 129,90</option>
+                    <option value="Mouse Genérico (Preto) - R$ 19,90">Mouse Genérico (Preto) - R$ 19,90</option>
+                    <option value="Mouse Microsoft (Preto) - R$ 69,90">Mouse Microsoft (Preto) - R$ 69,90</option>
+                    <option value="MousePad Genérico - R$ 9,90">MousePad Genérico - R$ 9,90</option>
+                </select>
+                <h2 class="subtitle">Quantidade</h2>
+                <form action="">
+                    <input type="number" min="1" value="1" id="qty">
+                </form>
+                <div class="buttons">
+                    <a href="#" class="btn add">Adicionar</a>
+                    <a href="#" class="btn clear">Limpar</a>
+                </div>
+            </div>
 
+            <div class="card description">
+                <table class="cartTable">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Qtd.</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
 
+                    </tbody>
+                </table>
+            </div>
+            <div class="total" id="totalDisplay">Total: R$ 0,00</div>
+        </section>
+    </main>
 
 
 
